@@ -1,0 +1,66 @@
+<view class="page">
+  <view class="page-description">订单查询</view>
+  <form onSubmit="onSubmit" onReset="onReset">
+      <view class="page-section">
+            <view class="row">
+              <text class="text_required">*</text> 
+              <view class="row-title">订单号</view>
+              <view class="row-extra"><input name="input" class="input" placeholder="请输入订单号" /></view>
+            </view>
+      </view>
+      <view class="page-section">
+            <view class="row">
+              <text class="text_required">*</text> 
+              <view class="row-title">物料编号</view>
+              <view class="row-extra"><input name="input" class="input" placeholder="请输入物料编号" /></view>
+            </view>
+      </view>
+      <view class="page-section">
+            <view class="row">
+              <text class="text_required">*</text> 
+              <view class="row-title">物料名称</view>
+              <view class="row-extra"><input name="input" class="input" placeholder="请输入物料名称" /></view>
+            </view>
+      </view>
+      <view class="page-section">
+          <picker onChange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="row">
+              <text class="text_required">*</text> 
+              <view class="row-title">外协厂</view>
+              <view class="row-extra">{{array[index]}}</view>
+              <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+            </view>
+          </picker>
+      </view>
+      <view class="page-section">
+            <view class="row">
+              <text class="text_required">*</text> 
+              <view class="row-title">订单日期</view>
+              <view class="row-extra" onTap="datePicker">
+                  <input name="input" class="input"  placeholder="请选择订单日期" />
+              </view>
+            </view>
+      </view>
+      <button form-type="submit" type="primary" onTap="doSearch">查询</button>
+  </form>
+  <view class="a-list">
+      <block a:for="{{orderList}}" a:key="*this">
+          <view class="list-info">
+              <view class="row">
+                <view class="data-view-one">
+                      <text class="head-title">订单编号:</text>{{item.workNo}}
+                </view>
+                <view class="data-view-two">
+                      <text class="head-title">物料编号:</text>{{item.itemCode}}
+                </view>
+              </view>
+            </view>
+          </view>
+      </block>
+      <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+        <view class="section">
+          <button type="default" plain onTap="lower">加载更多</button>
+        </view>
+      </view>
+  </view>
+</view>

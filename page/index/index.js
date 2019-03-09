@@ -42,10 +42,11 @@ Page({
                     },
                     fail: (res) => {
                         console.log("httpRequestFail---",res)
-                       dd.alert({content: JSON.stringify(res)});
+                        dd.alert({content: JSON.stringify(res)});
                     },
                     complete: (res) => {
                         dd.hideLoading();
+                        
                     }
                     
                 });
@@ -59,17 +60,15 @@ Page({
         })
 
     },
+    toDemo(){
+       dd.navigateTo({
+              url: "/page/example/example"
+       })
+    },    
     onLoad(){
-
         let _this = this;
-
         this.setData({
             corpId: app.globalData.corpId
-        })
-        
-        //dd.alert({content: "step1"});
-         
-        
-        
+        })        
     }
 })

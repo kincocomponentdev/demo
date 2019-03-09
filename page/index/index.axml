@@ -1,6 +1,6 @@
 <view>
-    <button type="primary" size="" onTap="loginSystem"> 点击登录 </button>
-    <view class="row">CorpId:{{corpId}}</view>
+    <button type="primary" size="" onTap="toDemo">点击演示</button>
+    <!-- <view class="row">CorpId:{{corpId}}</view> -->
 
     <view hidden="{{hideList}}">
         <view class="row">AuthCode:{{authCode}}</view>
