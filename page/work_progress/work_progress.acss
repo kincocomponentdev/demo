@@ -1,0 +1,26 @@
+.page{
+ padding: 3%;
+}
+.report{
+ margin-bottom: 15px;
+}
+.report-title{
+ font-family: ;
+ font-size: 20px;
+}
+.yahei{
+ font-family:"微软雅黑";
+}
+.sign{
+ color: red;
+}
+.form-row-label {
+    width: 2rem;
+    font-size: 0.3rem;
+    margin-right: 0.1rem;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+
+
