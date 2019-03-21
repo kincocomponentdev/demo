@@ -4,19 +4,19 @@ Page({
     arrayfactory: [
       {
         id: 0,
-        name: '工厂AAAA',
+        name: '深圳市富特恩贸易有限公司',
       },
       {
         id: 1,
-        name: '工厂BBBB',
+        name: '深圳市金三维模具有限公司',
       },
       {
         id: 2,
-        name: '工厂CCCC',
+        name: '深圳市拓普微科技开发有限公司',
       },
       {
         id: 3,
-        name: '工厂DDDD',
+        name: '深圳市宏盛发塑胶模具有限公司',
       },
     ],
 
