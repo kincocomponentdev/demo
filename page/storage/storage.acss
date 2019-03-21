@@ -4,13 +4,7 @@
 .report{
  margin-bottom: 15px;
 }
-.report-title{
- font-family: ;
- font-size: 20px;
-}
-.yahei{
- font-family:"微软雅黑";
-}
+
 .sign{
  color: red;
 }

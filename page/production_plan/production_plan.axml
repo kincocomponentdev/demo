@@ -1,5 +1,5 @@
 <view class="page">
-  <view class="page-description">生产计划查询</view>
+  <view class="report-title yahei page-description">生产计划查询</view>
   <form>
       <view class="page-section">
           <picker onChange="bindfacPickerChange" value="{{facindex}}" range="{{arrayfactory}}" range-key="name">
