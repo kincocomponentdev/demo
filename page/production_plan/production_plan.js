@@ -1,64 +1,60 @@
 Page({
   data: {
-    array: ['中国', '美国', '巴西', '日本'],
-    objectArray: [
+    
+    arrayfactory: [
       {
         id: 0,
-        name: '美国',
+        name: '工厂AAAA',
       },
       {
         id: 1,
-        name: '中国',
+        name: '工厂BBBB',
       },
       {
         id: 2,
-        name: '巴西',
+        name: '工厂CCCC',
       },
       {
         id: 3,
-        name: '日本',
+        name: '工厂DDDD',
       },
     ],
-    arrIndex: 0,
-    index: 0,
-    collapseData: {
-      onTitleTap: 'handleTitleTap',
-      panels: [{
-        title: '订单号:PO2SDFDF',
-        content: '订单编号:PO2SDFSD , 物料编号:5.3233323 , 订单状态:已确认 , 外协厂:深圳休息休息厂',
-        expanded: true,
-      }, {
-        title: '订单号:333333',
-        content: 'Content 2',
-        expanded: false,
-      }],
-    },
+
+    arraystatus: [
+      {
+        id: 0,
+        name: '待生产',
+      },
+      {
+        id: 1,
+        name: '生产中',
+      },
+      {
+        id: 2,
+        name: '已完成',
+      }
+    ],
+  
+    facindex: 0,
+
+    statusindex:0,
+
     orderList:[],
+
     isHideLoadMore: true,
   },
-  bindPickerChange(e) {
+
+  bindfacPickerChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
-      index: e.detail.value,
-    });
-  },
-  bindObjPickerChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
-    this.setData({
-      arrIndex: e.detail.value,
+         facindex: e.detail.value,
     });
   },
 
-  datePicker() {
-    dd.datePicker({
-      currentDate: '2016-10-10',
-      startDate: '2016-10-9',
-      endDate: '2017-10-9',
-      success: (res) => {
-        dd.alert({
-          title: 'datePicker response: ' + JSON.stringify(res)
-        });
-      },
+  bindstatusPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      statusindex: e.detail.value,
     });
   },
 
@@ -87,9 +83,10 @@ Page({
       duration: 1000,
       success: () => {
           var orderList = [
-          {workNo:"P3WEWER",itemCode:"3.23232", statusFlagName:"已确认"},
-          {workNo:"PSDFSDWER",itemCode:"3.3432", statusFlagName:"已确认"},
-          {workNo:"POOOSDFSD",itemCode:"3.8982", statusFlagName:"已确认"}
+                              {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"},
+                              {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"},
+                              {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"},
+                              {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"},
          ];
          this.setData({"orderList":orderList,"isHideLoadMore":false});
       },
@@ -98,7 +95,7 @@ Page({
   
  lower(){
      var orderList = this.data.orderList;
-     orderList.push({workNo:"P3WEWER",itemCode:"3.23232", statusFlagName:"已确认"});
+     orderList.push( {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"});
      this.setData({"orderList":orderList,"isHideLoadMore":true});
   }
 });

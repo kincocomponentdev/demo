@@ -1,6 +1,5 @@
 {
   "pages": [
-    "page/index/index",
     "page/production_plan/production_plan",
     "page/work_progress/work_progress",
     "page/storage/storage",
