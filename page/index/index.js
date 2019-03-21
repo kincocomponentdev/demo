@@ -62,7 +62,7 @@ Page({
     },
     toDemo(){
        dd.navigateTo({
-              url: "/page/example/example"
+              url: "/page/production_plan/production_plan"
        })
     },    
     onLoad(){

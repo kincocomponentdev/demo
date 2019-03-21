@@ -1,7 +1,11 @@
 {
   "pages": [
     "page/index/index",
-    "page/example/example"
+    "page/production_plan/production_plan",
+    "page/work_progress/work_progress",
+    "page/storage/storage",
+    "page/outbound/outbound"
+
   ],
   "window": {
     "enableWK": "YES",

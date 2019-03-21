@@ -1,5 +1,5 @@
 <view>
-    <button type="primary" size="" onTap="toDemo">点击演示</button>
+    <button type="primary" size="" onTap="toDemo">产销协同系统演示</button>
     <!-- <view class="row">CorpId:{{corpId}}</view> -->
 
     <view hidden="{{hideList}}">
