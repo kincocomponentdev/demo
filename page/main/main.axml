@@ -27,25 +27,25 @@
   </list>
   <view class="list-info">
    <view class="data-view-button">
-      <navigator url="/page/stock/stock?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+      <navigator url="/page/stock/stock">
        <button class="confirm-button" loading><text class="button-title">库存查询</text>       
        </button>
       </navigator>
      </view>
      <view class="data-view-button">
-      <navigator url="/page/storage/storage?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+      <navigator url="/page/storage/storage">
        <button class="confirm-button" loading><text class="button-title">入库</text>       
        </button>
       </navigator>
      </view>
      <view class="data-view-button">
-      <navigator url="/page/outbound/outbound?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+      <navigator url="/page/outbound/outbound">
        <button class="confirm-button" loading><text class="button-title">出库</text>        
        </button>
       </navigator>
      </view>
      <view class="data-view-button">
-      <navigator url="/page/radar/radar_area/radar_area?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+      <navigator url="/page/radar/radar_area/radar_area">
        <button class="confirm-button" loading><text class="button-title">能力画像</text>      
        </button>
       </navigator>

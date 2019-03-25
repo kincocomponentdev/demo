@@ -10,10 +10,13 @@
 .data-view-button{
  width: 25%;
  display: inline-block;
- height: 25px;
 }
 .button-title{
  font-size: 10px;
+ line-height: 20px;
+}
+.{
+ 
 }
 
 
