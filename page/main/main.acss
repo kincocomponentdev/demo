@@ -1,0 +1,19 @@
+.row{
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.data-inf{
+ /* text-align: center; */
+     text-align: right;
+    margin-right: 5%;
+}
+.data-view-button{
+ width: 25%;
+ display: inline-block;
+ height: 25px;
+}
+.button-title{
+ font-size: 10px;
+}
+
+

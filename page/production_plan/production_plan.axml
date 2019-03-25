@@ -1,104 +1,126 @@
 <view class="page">
-  <view class="report-title yahei page-description">生产计划查询</view>
-  <form>
-      <view class="page-section">
-          <picker onChange="bindfacPickerChange" value="{{facindex}}" range="{{arrayfactory}}" range-key="name">
-            <view class="row">
-              <text class="text_required">*</text> 
-              <view class="row-title">工厂</view>
-              <view class="row-extra">{{arrayfactory[facindex].name}}</view>
-              <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
-            </view>
-          </picker>
-      </view>
-      <view class="page-section">
-            <view class="row">
-              <text class="text_required">*</text> 
-              <view class="row-title">生产计划单号</view>
-              <view class="row-extra"><input name="input" class="input" placeholder="请输入生产计划单号" /></view>
-            </view>
-      </view>
-      <view class="page-section">
-            <view class="row">
-              <text class="text_required">*</text> 
-              <view class="row-title">货品编码</view>
-              <view class="row-extra"><input name="input" class="input" placeholder="请输入货品编码" /></view>
-            </view>
-      </view>
-
-      <view class="page-section">
-          <picker onChange="bindstatusPickerChange" value="{{statusindex}}" range="{{arraystatus}}" range-key="name">
-            <view class="row">
-              <text class="text_required">*</text> 
-              <view class="row-title">状态</view>
-              <view class="row-extra">{{arraystatus[statusindex].name}}</view>
-              <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
-            </view>
-          </picker>
-      </view>
-      <button form-type="submit" type="primary" onTap="doSearch">查询</button>
-  </form>
-  <view class="a-list">
-      <block a:for="{{orderList}}" a:key="*this">
-          <view class="list-info">
-              <view class="row">
-                <view class="data-view-one">
-                      <text class="head-title">生产计划单号:</text>{{item.productOrderNo}}
-                </view>
-                <view class="data-view-two">
-                     <text class="head-title">货品编码:</text>{{item.itemCode}}
-                </view>
-              </view>
-
-              <view class="row">
-                <view class="data-view-one">
-                     <text class="head-title">计划开始时间:</text>{{item.startTime}}
-                </view>
-                <view class="data-view-two">
-                     <text class="head-title">计划结束时间:</text>{{item.endTime}}
-                </view>
-              </view>
-
-              <view class="row">
-                <view class="data-view-one">
-                     <text class="head-title">目标生产量:</text>{{item.targetNo}}
-                </view>
-                <view class="data-view-two">
-                     <text class="head-title">已完成生产量:</text>{{item.finishedNo}}
-                </view>
-              </view>
-              
-              <view class="row">
-                <view class="data-view-one">
-                     <text class="head-title">生产状态:</text>{{item.productStatus}}
-                </view>
-                <view class="data-view-two">
-                        <navigator url="/page/work_progress/work_progress?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
-                           <button class="confirm-button">报工</button>
-                        </navigator>
-                </view>
-              </view>
-
-              <view class="row">
-                <view class="data-view-button">
-                      <navigator url="/page/storage/storage?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
-                          <button class="confirm-button">入库</button>
-                      </navigator>
-                </view>
-                <view class="data-view-button">
-                      <navigator url="/page/outbound/outbound?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
-                         <button class="confirm-button">出库</button>
-                      </navigator>
-                </view>
-              </view>
-
-            </view>
-          </view>
-      </block>
-      <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
-        <view class="section">
-          <button type="default" plain onTap="lower">加载更多</button>
-        </view>
-      </view>
+ <view class="report-title yahei page-description">生产计划查询
+ </view>
+ <form>
+  <view class="page-section">
+   <picker onChange="bindfacPickerChange" value="{{facindex}}" range="{{arrayfactory}}" range-key="name">
+    <view class="row">
+     <text class="text_required">*
+     </text>
+     <view class="row-title">工厂
+     </view>
+     <view class="row-extra">{{arrayfactory[facindex].name}}
+     </view>
+     <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+   </picker>
   </view>
+  <view class="page-section">
+   <view class="row">
+    <text class="text_required">*
+    </text>
+    <view class="row-title">生产计划单号
+    </view>
+    <view class="row-extra">
+     <input name="input" class="input" placeholder="请输入单号后四位" />
+    </view>
+   </view>
+  </view>
+  <view class="page-section">
+   <view class="row">
+    <text class="text_required">*
+    </text>
+    <view class="row-title">货品编码
+    </view>
+    <view class="row-extra">
+     <input name="input" class="input" placeholder="请输入编码" />
+    </view>
+   </view>
+  </view>
+  <view class="page-section">
+   <picker onChange="bindstatusPickerChange" value="{{statusindex}}" range="{{arraystatus}}" range-key="name">
+    <view class="row">
+     <text class="text_required">*
+     </text>
+     <view class="row-title">状态
+     </view>
+     <view class="row-extra">{{arraystatus[statusindex].name}}
+     </view>
+     <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+   </picker>
+  </view>
+  <button form-type="submit" type="primary" onTap="doSearch">查询
+  </button>
+ </form>
+ <view class="a-list">
+  <block a:for="{{orderList}}" a:key="*this">
+   <view class="list-info">
+    <view class="row">
+     <view class="data-view-one">
+      <text class="head-title">生产计划单号:
+      </text>{{item.productOrderNo}}                
+     </view>
+     <view class="data-view-two">
+      <text class="head-title">货品编码:
+      </text>{{item.itemCode}}                
+     </view>
+    </view>
+    <view class="row">
+     <view class="data-view-one">
+      <text class="head-title">计划开始时间:
+      </text>{{item.startTime}}                
+     </view>
+     <view class="data-view-two">
+      <text class="head-title">计划结束时间:
+      </text>{{item.endTime}}                
+     </view>
+    </view>
+    <view class="row">
+     <view class="data-view-one">
+      <text class="head-title">目标生产量:
+      </text>{{item.targetNo}}                
+     </view>
+     <view class="data-view-two">
+      <text class="head-title">已完成生产量:
+      </text>{{item.finishedNo}}                
+     </view>
+    </view>
+    <view class="row">
+     <view class="data-view-one">
+      <text class="head-title">生产状态:
+      </text>{{item.productStatus}}                
+     </view>
+     <view class="data-view-two">
+      <navigator url="/page/work_progress/work_progress?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+       <button class="confirm-button">报工
+       </button>
+      </navigator>
+     </view>
+    </view>
+     <view class="row">
+     <view class="data-view-button">
+      <navigator url="/page/storage/storage?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+       <button class="confirm-button">入库       
+       </button>
+      </navigator>
+     </view>
+     <view class="data-view-button">
+      <navigator url="/page/outbound/outbound?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+       <button class="confirm-button">出库       
+       </button>
+      </navigator>
+     </view>
+    </view>
+    
+   </view>
+   </view>
+  </block>
+  <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+   <view class="section">
+    <button type="default" plain onTap="lower">加载更多
+    </button>
+   </view>
+  </view>
+ </view>
 </view>

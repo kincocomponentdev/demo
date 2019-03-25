@@ -1,0 +1,56 @@
+<view class="page">
+ <view class="report-title yahei page-description">库存信息
+ </view>
+ <form>
+  <view class="page-section">
+   <picker onChange="bindfacPickerChange" value="{{facindex}}" range="{{arrayfactory}}" range-key="name">
+    <view class="row">
+     <text class="text_required">*
+     </text>
+     <view class="row-title">工厂
+     </view>
+     <view class="row-extra">{{arrayfactory[facindex].name}}
+     </view>
+     <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+   </picker>
+   
+  </view>
+  <button form-type="submit" type="primary" onTap="doSearch">查询
+  </button>
+ </form>
+ <view class="a-list">
+  <block a:for="{{orderList}}" a:key="*this">
+   <view class="list-info">
+    <view class="row">
+     <view class="data-view-two">
+      <text class="head-title">货品编码:
+      </text>{{item.itemCode}}                
+     </view>
+     <view class="data-view-two">
+      <text class="head-title">货品名称:
+      </text>{{item.name}}                
+     </view>
+    </view>
+    <view class="row">
+     <view class="data-view-one">
+      <text class="head-title">库存地址:
+      </text>{{item.path}}                
+     </view>
+     <view class="data-view-two">
+      <text class="head-title">现有库存:
+      </text>{{item.count}}                
+     </view>
+    </view>
+   
+   </view>
+  </block>
+ </view>
+ <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+  <view class="section">
+   <button type="default" plain onTap="lower">加载更多
+   </button>
+  </view>
+ </view>
+</view>
+</view>

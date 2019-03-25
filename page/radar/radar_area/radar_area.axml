@@ -1,0 +1,8 @@
+<view class="page">
+ 
+<view class="report"><text class="report-title yahei">能力画像</text></view>
+<view class="container" style="width:{{width}}%;height:{{height}}px;">
+  <dd-charts canvasId="ddchart-dom-bar" onDraw="onDraw"></dd-charts>
+</view>
+
+</view>

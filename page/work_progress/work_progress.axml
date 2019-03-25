@@ -55,7 +55,7 @@
     <view class="form-row">
       <view class="form-row-label"><text class="sign">*</text>完成生产量</view>
       <view class="form-row-content">
-        <input class="input" type="number" placeholder="数字输入框" />
+        <input class="input" type="number" placeholder="报工数量" />
       </view>
     </view>
     <view class="form-line" />

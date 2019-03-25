@@ -15,10 +15,5 @@
     color: rgb(0, 0, 0);
 }
 
-.qrcode{
- width: 20px;
- height: 20px;
-}
-
 
 

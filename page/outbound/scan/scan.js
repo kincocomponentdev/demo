@@ -17,7 +17,20 @@ Page({
    inputValue: e.detail.value,
   });
  },
-
+ toscan() {
+  dd.scan({
+   type: 'qr',
+   success: (res) => {
+    dd.alert({ title: res.code });
+   },
+   fail: function (res) {
+    dd.showToast({
+     type: 'fail',
+     content: '未获取到信息',
+    });
+   },
+  });
+ },
 
  outStock() {
   dd.httpRequest({
@@ -39,30 +52,15 @@ Page({
      content: '出库失败',
     });
    },
-   
- toscan() {
-  dd.scan({
-   type: 'qr',
-   success: (res) => {
-    dd.alert({ title: res.code });
-   },
-   fail: function (res) {
-    dd.showToast({
-     type: 'fail',
-     content: '未获取到信息',
-    });
-   },
-  });
- },
    complete: function (res) {
     // dd.hideLoading();
     // dd.alert({content: 'complete'});
    }
   });
  },
- return(){
+ return() {
   dd.navigateBack({
-    delta: 1
+   delta: 1
   });
  },
 

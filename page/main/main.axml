@@ -1,0 +1,63 @@
+<view>
+  <list>
+    <block a:for="{{items}}">
+      <navigator url="/page/production_plan/production_plan">
+      <list-item arrow="{{true}}" index="{{index}}" key="items-{{index}}" last="{{index === (items.length - 1)}}">
+           <view>
+             <text style="margin-left: {{ item.isWrap ? '12px' : '0' }}">{{item.intro}}</text>
+           </view>
+            <view slot="extra" >
+                <badge a:if="{{!item.isWrap}}" text="{{item.text}}" dot="{{item.dot}}" overflowCount="{{item.overflowCount}}" /> 
+            </view>        
+      </list-item>
+       </navigator>
+    </block>
+    <!-- <block a:for="{{stock}}">
+      <navigator url="/page/stock/stock">
+      <list-item arrow="{{true}}" index="{{index}}" key="items-{{index}}" last="{{index === (items.length - 1)}}">
+           <view>
+             <text style="margin-left: {{ item.isWrap ? '12px' : '0' }}">{{item.intro}}</text>
+           </view>
+            <view slot="extra" >
+                <badge a:if="{{!item.isWrap}}" text="{{item.text}}" dot="{{item.dot}}" overflowCount="{{item.overflowCount}}" /> 
+            </view>        
+      </list-item>
+       </navigator>
+    </block> -->
+  </list>
+  <view class="list-info">
+   <view class="data-view-button">
+      <navigator url="/page/stock/stock?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+       <button class="confirm-button" loading><text class="button-title">库存查询</text>       
+       </button>
+      </navigator>
+     </view>
+     <view class="data-view-button">
+      <navigator url="/page/storage/storage?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+       <button class="confirm-button" loading><text class="button-title">入库</text>       
+       </button>
+      </navigator>
+     </view>
+     <view class="data-view-button">
+      <navigator url="/page/outbound/outbound?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+       <button class="confirm-button" loading><text class="button-title">出库</text>        
+       </button>
+      </navigator>
+     </view>
+     <view class="data-view-button">
+      <navigator url="/page/radar/radar_area/radar_area?productOrderNo={{item.productOrderNo}}&itemCode={{item.itemCode}}">
+       <button class="confirm-button" loading><text class="button-title">能力画像</text>      
+       </button>
+      </navigator>
+     </view>
+    </view>
+ <view class="data-inf">
+    <text style="color:#3CB371;">◉</text>预定开工
+    <text style="color:#FF0000;">◉</text>逾期
+ </view>   
+ <view>
+  <calendar type="single" tagData="{{tagData}}" onSelect="handleSelect">
+  </calendar>
+ </view>
+ 
+</view>

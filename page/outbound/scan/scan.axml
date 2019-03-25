@@ -1,5 +1,5 @@
 <view class="page">
- <view class="report"><text class="report-title yahei">货品入库</text></view>
+ <view class="report"><text class="report-title yahei">货品出库</text></view>
 
   <view class="page-section">
     <view class="form-row">
@@ -7,7 +7,6 @@
       <view class="form-row-content">
         <input class="input" value="{{product.number}}" disabled="{{true}}"/>
       </view>
-      <view><image src="/static/img/qrcode.png"  class="qrcode" /></view>
     </view>
     <view class="form-line" />
     <view class="form-row">
@@ -18,14 +17,14 @@
     </view>
     <view class="form-line" />
     <view class="form-row">
-      <view class="form-row-label">目标生产量</view>
+      <view class="form-row-label">完工数量</view>
       <view class="form-row-content">
         <input class="input" value="{{product.planAmount}}" disabled="{{true}}"/>
       </view>
     </view>
     <view class="form-line" />
     <view class="form-row">
-      <view class="form-row-label">现有库存</view>
+      <view class="form-row-label">已发货数量</view>
       <view class="form-row-content">
         <input class="input" value="{{product.completAmount}}" disabled="{{true}}"/>
       </view>
@@ -33,15 +32,7 @@
     <view class="form-line" />
 
     <view class="form-row">
-      <view class="form-row-label"><text class="sign">*</text>变更仓库</view>
-      <view class="form-row-content">
-        <input class="input"/>
-      </view>
-    </view>
-    <view class="form-line" />
-
-    <view class="form-row">
-      <view class="form-row-label"><text class="sign">*</text>入库数量</view>
+      <view class="form-row-label"><text class="sign">*</text>发货数量</view>
       <view class="form-row-content">
         <input class="input" type="number" placeholder="数字输入框" />
       </view>
@@ -50,7 +41,7 @@
   </view>
 
   <view>
-   <button type="primary" onTap="inputStock">入库</button>
+   <button type="primary" onTap="outStock">出库</button>
    <button type="default" onTap="return">返回</button>
   </view>
 

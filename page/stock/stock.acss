@@ -1,0 +1,96 @@
+
+.page-section {
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+
+.text_required{
+   color:red ;
+   margin-top:18rpx;
+   font-size: 40rpx;
+   margin-right: 10rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.row-title {
+  flex: 1;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.row-extra {
+  flex-basis: initial;
+  font-size: 28rpx;
+  /* color: #888; */
+}
+
+.row-arrow {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 16rpx;
+}
+
+.a-list {
+ box-sizing: border-box;
+ width: 100%;
+}
+
+.list-info{
+ padding-top: 10px;
+ padding-bottom: 10px;
+ border-radius: 1px;
+ margin-bottom: 3px;
+ background: #DCDCDC;
+ font-size: 28rpx;
+ height:auto!important;
+  
+}
+.data-view-one{
+  font-size: 13px;
+  width: 48%;
+  margin-left: 2%;
+  /* text-align: left */
+
+}
+.data-view-two{
+  font-size: 13px;
+  width: 48%;
+  margin-left: 2%;
+  /* text-align: right */
+}
+.weui-loadmore {
+  width: 65%;
+  margin: 1.5em auto;
+  line-height: 1.6em;
+  font-size: 14px;
+  text-align: center;
+}
+.head-title{
+    font-weight:bold; 
+    font-size: 14px;
+    font-family:"微软雅黑";
+
+}
+.data-view-button{
+  width: 45%;
+  margin-left: 4%;
+}
+
+.confirm-button{
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+    text-align: center;
+}
+
+

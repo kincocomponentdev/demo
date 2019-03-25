@@ -89,10 +89,10 @@ onLoad(){
       duration: 100,
       success: () => {
           var orderList = [
-                              {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"},
-                              {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"},
-                              {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"},
-                              {productOrderNo :"P3WEWER", itemCode:"3.23232", startTime:"2018-09-08", endTime:"2018-12-20",targetNo:20, finishedNo:3, productStatus:"待生产"},
+                              {name :"P3WEWER", itemCode:"3.23232", targetNo:20, count:33, },
+                              {name :"P3WEWER", itemCode:"3.23232", targetNo:20, count:38, },
+                              {name :"P3WEWER", itemCode:"3.23232", targetNo:20, count:23, },
+                              {name :"P3WEWER", itemCode:"3.23232", targetNo:20, count:13, },
          ];
          this.setData({"orderList":orderList,"isHideLoadMore":false});
       },
